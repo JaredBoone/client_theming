@@ -1,3 +1,4 @@
 [submodule "client"]
 	path = client
-	url = https://github.com/owncloud/client.git
+	url = https://github.com/jaredboone/owncloud-client.git
+	branch = 2.2.4
