@@ -13,6 +13,12 @@ sudo rm -rf install
 # Clone the desktop client code
 cd $WORKING_DIR
 git clone --recursive https://github.com/JaredBoone/owncloud-client.git
+
+if [ ! -d "$WORKING_DIR/owncloud-client" ]; then
+  echo "Err: Could not clone owncloud-client"
+  exit
+fi
+
 cd owncloud-client
 git checkout 2.2.4
 git submodule update --recursive
