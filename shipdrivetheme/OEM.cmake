@@ -4,7 +4,7 @@ set( APPLICATION_EXECUTABLE "shipdrive" )
 set( APPLICATION_DOMAIN     "drive.ship.scea.com" )
 set( APPLICATION_VENDOR     "SHIP" )
 set( APPLICATION_UPDATE_URL "https://drive.ship.scea.com/client/" CACHE string "URL for updater" )
-
+set( APPLICATION_ICON_NAME  "SHIPdrive" )
 
 set( THEME_CLASS            "ShipdriveTheme" )
 set( APPLICATION_REV_DOMAIN "com.sie.ship.drive.desktopclient" )

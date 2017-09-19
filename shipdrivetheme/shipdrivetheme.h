@@ -97,7 +97,7 @@ public:
 
         re += trUtf8("<p><small>By SHIP</small></p>");
 
-        re += tr("<p>Distributed by %1 and licensed under the GNU General Public License (GPL) Version 2.0.<br/>"
+        re += tr("<p>Licensed under the GNU General Public License (GPL) Version 2.0.<br/>"
              "%2 and the %2 Logo are registered trademarks of %1 in the "
              "European Union, other countries, or both.</p>")
             .arg(APPLICATION_VENDOR).arg(APPLICATION_NAME);
