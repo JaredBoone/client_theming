@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=/usr/local/Qt-5.4.0/bin/:$PATH
+export PATH=/usr/local/Qt-5.6.2/bin/:$PATH
 export OPENSSL_ROOT_DIR=$(brew --prefix openssl)
 export WORKING_DIR=~/workspace/temp
 export CLIENT_THEMING_DIR=~/workspace/nextcloud-client_theming
@@ -20,12 +20,12 @@ if [ ! -d "$WORKING_DIR/owncloud-client" ]; then
 fi
 
 cd owncloud-client
-git checkout 2.2.4
+git checkout 2.3.2
 git submodule update --recursive
 
 # Build qtkeychain
 cd $WORKING_DIR/owncloud-client/src/3rdparty/qtkeychain
-cmake -DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8 -DCMAKE_INSTALL_PREFIX=$WORKING_DIR/install -DCMAKE_PREFIX_PATH=/usr/local/Qt-5.4.0 .
+cmake -DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8 -DCMAKE_INSTALL_PREFIX=$WORKING_DIR/install -DCMAKE_PREFIX_PATH=/usr/local/Qt-5.6.2 .
 make install
 
 # Build the client
@@ -34,7 +34,7 @@ cp $CLIENT_THEMING_DIR/osx/dsa_pub.pem owncloud-client/admin/osx/sparkle/
 rm -rf build-mac
 mkdir build-mac
 cd build-mac
-cmake -DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8 -DCMAKE_INSTALL_PREFIX=$WORKING_DIR/install -DCMAKE_PREFIX_PATH=/usr/local/Qt-5.4.0 -D SPARKLE_INCLUDE_DIR=~/Library/Frameworks/Sparkle.framework/ -D SPARKLE_LIBRARY=~/Library/Frameworks/Sparkle.framework/ -D OEM_THEME_DIR=$CLIENT_THEMING_DIR/shipdrivetheme -DWITH_CRASHREPORTER=ON -DMIRALL_VERSION_BUILD=1 ../owncloud-client -Wno-dev
+cmake -DCMAKE_OSX_SYSROOT="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8 -DCMAKE_INSTALL_PREFIX=$WORKING_DIR/install -DCMAKE_PREFIX_PATH=/usr/local/Qt-5.6.2 -D SPARKLE_INCLUDE_DIR=~/Library/Frameworks/Sparkle.framework/ -D SPARKLE_LIBRARY=~/Library/Frameworks/Sparkle.framework/ -D OEM_THEME_DIR=$CLIENT_THEMING_DIR/shipdrivetheme -DWITH_CRASHREPORTER=ON -DNO_SHIBBOLETH=1 -DMIRALL_VERSION_BUILD=1 ../owncloud-client -Wno-dev
 make
 make install
 $WORKING_DIR/owncloud-client/admin/osx/sign_app.sh $WORKING_DIR/install/shipdrive.app DA30C098685993A9C483F89D06F2E46B467034A6 PZR8TPXW34
