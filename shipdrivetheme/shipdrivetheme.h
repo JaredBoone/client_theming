@@ -72,7 +72,7 @@ public:
     }
 
     QString helpUrl() const {
-        return QString::fromLatin1("http://c5.ship.scea.com/confluence/display/HELP/SHIPdrive/").arg(MIRALL_VERSION_MAJOR).arg(MIRALL_VERSION_MINOR);
+        return QString::fromLatin1("https://c5.ship.scea.com/confluence/display/HELP/SHIPdrive/").arg(MIRALL_VERSION_MAJOR).arg(MIRALL_VERSION_MINOR);
     }
 
 #ifndef TOKEN_AUTH_ONLY
