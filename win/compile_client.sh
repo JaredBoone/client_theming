@@ -1,4 +1,10 @@
 #!/bin/bash -xe
+
+# from https://raw.githubusercontent.com/owncloud/administration/master/jenkins/win32_build/compile_client.sh
+# see https://central.owncloud.org/t/building-the-windows-installer/8403
+# and https://central.owncloud.org/t/error-using-docker-to-build-the-windows-client/5107
+
+
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
 CMD=$(basename $0)
 
@@ -38,11 +44,11 @@ build_client() {
     if [ ! -z "$oem_theme" ]; then
       # FIXME!
       #tar xvf ../$oem_theme.tar.xz
-      mv ../$oem_theme .
+      cp -rp ../../$oem_theme .
       if [ -d $PWD/$oem_theme/syncclient ]; then
         params="-DOEM_THEME_DIR=$PWD/$oem_theme/syncclient"
       else
-        params="-DOEM_THEME_DIR=$PWD/$oem_theme/mirall"
+        params="-DOEM_THEME_DIR=$PWD/$oem_theme"
       fi
     fi
 
