@@ -6,7 +6,7 @@ export SUDO_GID=${SUDO_GID:-1000}
 export APP=Nextcloud
 export LOWERAPP=${APP,,}
 export ARCH=x86_64
-export VERSION=2.3.2-beta
+export VERSION=2.3.3-beta
 
 #Set Qt-5.8
 export QT_BASE_DIR=/opt/qt58

@@ -12,11 +12,11 @@ if [ ! -d "$WORKING_DIR/owncloud-client" ]; then
 fi
 
 cd owncloud-client
-git checkout 2.3.2
+git checkout 2.3.3
 git submodule update --recursive
 
 docker-machine start default
 eval $(docker-machine env)
 docker pull alfageme/docker-owncloud-client-win32:snapshot
 docker run -v "$CLIENT_THEMING_DIR:/home/user/" -v "$WORKING_DIR/owncloud-client:/home/user/owncloud-client" alfageme/docker-owncloud-client-win32:snapshot /home/user/win/compile_client.sh -o shipdrivetheme -b 1 /home/user/owncloud-client
-cp $WORKING_DIR/owncloud-client/build/SHIPdrive-2.3.2.1-setup.exe ~/Desktop/
+cp $WORKING_DIR/owncloud-client/build/SHIPdrive-2.3.3.1-setup.exe ~/Desktop/

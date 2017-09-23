@@ -20,7 +20,7 @@ if [ ! -d "$WORKING_DIR/owncloud-client" ]; then
 fi
 
 cd owncloud-client
-git checkout 2.3.2
+git checkout 2.3.3
 git submodule update --recursive
 
 # Build qtkeychain
