@@ -3,8 +3,8 @@ export CLIENT_THEMING_DIR=~/workspace/nextcloud-client_theming
 export WORKING_DIR=~/workspace/temp
 
 cd $WORKING_DIR
-#sudo rm -rf owncloud-client
-#git clone --recursive https://github.com/JaredBoone/owncloud-client.git
+sudo rm -rf owncloud-client
+git clone --recursive https://github.com/JaredBoone/owncloud-client.git
 
 if [ ! -d "$WORKING_DIR/owncloud-client" ]; then
   echo "Err: Could not clone owncloud-client"
