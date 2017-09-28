@@ -1,6 +1,6 @@
 set( APPLICATION_NAME       "SHIPdrive" )
 set( APPLICATION_SHORTNAME  "SHIPdrive" )
-set( APPLICATION_EXECUTABLE "shipdrive" )
+set( APPLICATION_EXECUTABLE "SHIPdrive" )
 set( APPLICATION_DOMAIN     "drive.ship.scea.com" )
 set( APPLICATION_VENDOR     "SHIP" )
 set( APPLICATION_UPDATE_URL "https://drive.ship.scea.com/client/" CACHE string "URL for updater" )
